@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="container__filter">
+        <div class="container__filter__int">
+            <form [formGroup]="filterForm" class="container__filter__values">
+                <label class="label">Codigo
+                    <input 
+                        formControlName="codigo" 
+                        class="input" 
+                        type="text" 
+                        placeholder="Ej: C9000" >
+                </label>
+                <label class="label">Nombre
+                    <input 
+                        formControlName="nombre" 
+                        class="input" 
+                        type="text" 
+                        placeholder="Ej: Bateria" >
+                </label>
+                <button  
+                class="btn btn__principal" 
+                (click)="buscar()">
+                {{ constants.TXT_BTN_BUSCAR }}
+              </button>
+            </form>
+        </div>
+    </div>
+    <div class="container__table">
+        <table mat-table [dataSource]="dataLista">
+            <ng-container matColumnDef="orden">
+                <th mat-header-cell *matHeaderCellDef>Nro.</th>
+                <td
+                    data-label="orden"
+                    mat-cell
+                    *matCellDef="let element">
+                    {{ element.ID }}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="codigo">
+                <th mat-header-cell *matHeaderCellDef>Codigo</th>
+                <td
+                    data-label="codigo"
+                    mat-cell
+                    *matCellDef="let element">
+                    {{ element.COD }}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <td
+                    data-label="nombre"
+                    mat-cell
+                    *matCellDef="let element">
+                    {{ element.NOMBRE }}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="unidad">
+                <th mat-header-cell *matHeaderCellDef>Unidad</th>
+                <td
+                    data-label="unidad"
+                    mat-cell
+                    *matCellDef="let element ">
+                    <div [className]="element.UNITID.toUpperCase() | classBadgePipe">
+                        {{ element.UNITID }}
+                    </div>
+                    
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedCols"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedCols"></tr>
+        </table>
+    </div>
+</div>

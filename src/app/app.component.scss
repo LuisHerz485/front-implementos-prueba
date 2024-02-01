@@ -1,0 +1,54 @@
+.container{
+    padding : 50px;
+
+    &__form{
+        &__content {
+            border : 1px solid #d4d4d4;
+            border-radius: 5px;
+            padding : 20px;
+            background-color: #d4d4d4;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+        }
+        
+    }
+}
+
+.oculto{
+    visibility: hidden;
+    
+}
+
+
+.btn{
+    
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+
+    &__principal{
+        background-color: #04AA6D; 
+        
+    }
+
+    &__disabled{
+        background-color: rgb(133, 133, 133);
+    }
+
+    &__reiniciar{
+        background-color: #aa1d04; 
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+

@@ -1,0 +1,9 @@
+
+<div class="container">
+    <form [formGroup]="archiveForm">
+        <input 
+            type="file" 
+            formControlName="archivo" 
+            (change)="detectarArchivo($event.target)">
+    </form>
+</div>

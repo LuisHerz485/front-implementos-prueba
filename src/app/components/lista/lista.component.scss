@@ -1,0 +1,68 @@
+.container{
+    padding: 10px;
+
+    &__filter{
+        padding-right: 10px;
+       
+    }
+
+    &__values{
+        display: flex;
+    }
+}
+
+.btn{
+    
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+
+    &__principal{
+        background-color: #04AA6D; 
+        
+    }
+}
+
+.label{
+    font-weight: '900';
+}
+
+.input{
+    padding : 8px;
+    border-radius: 5px;  
+    margin-right: 10px;
+}
+
+.bagde__unidad{
+    color : #fff;
+    padding : 5px;
+    border-radius: 15px;
+    background-color: #FC4438;
+    font-weight: 800;
+    text-align: center;
+  }
+  
+  .bagde__rollo{
+    color : #fff;
+    padding : 5px;
+    border-radius: 15px;
+    background-color: #54BA4A;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .bagde__barril{
+    color : #fff;
+    padding : 5px;
+    border-radius: 15px;
+    background-color: #714aba;
+    font-weight: 800;
+    text-align: center;
+  }

@@ -1,0 +1,29 @@
+<main>
+  <div class="container">
+    <h1>{{ constants.titulo }}</h1>
+
+    <ng-container *ngIf="!isArchive" class="container__form">
+      <h4>Seleccion de archivos</h4>
+      <div class="container__form__content">
+        <app-archivo (isValidArchivo)="validArchivo($event)"/>
+        <button
+          class="btn btn__principal" 
+          [class.btn__disabled]="!isValidArchivo"
+          (click)="analizar()" 
+          [disabled]="!isValidArchivo">
+          {{ constants.TXT_BTN_ANALIZAR }}
+        </button>
+      </div>
+    </ng-container>
+
+    <ng-container class="container__form">
+      <app-lista [class.oculto]="!isArchive"/>
+      <button 
+      [class.oculto]="!isArchive"
+        class="btn btn__reiniciar" 
+        (click)="reiniciar()">
+        {{ constants.TXT_BTN_REINICIAR }}
+      </button>
+    </ng-container>
+  </div>
+</main>
